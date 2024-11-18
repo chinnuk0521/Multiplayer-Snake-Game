@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .neon-text {
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 10px theme('colors.blue.400');
+  }
+  
+  .game-grid {
+    background-size: 20px 20px;
+    background-image: 
+      linear-gradient(to right, theme('colors.blue.900/10') 1px, transparent 1px),
+      linear-gradient(to bottom, theme('colors.blue.900/10') 1px, transparent 1px);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-blue-500 rounded;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px currentColor);
+  }
+}
